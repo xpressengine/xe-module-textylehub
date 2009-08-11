@@ -260,5 +260,25 @@
             Context::addJsFilter($this->module_path.'tpl/filter', 'creation.xml');
             $this->setTemplateFile('creation');
         }
+
+        function rss() {
+            $oRss = &getView('rss');
+            $oDocumentModel = &getModel('document');
+            $oModuleModel = &getModel('module');
+
+            $output = executeQueryArray('textylehub.getRssList', $args);
+            if($output->data) {
+                foreach($output->data as $key => $val) {
+                    unset($obj);
+                    $obj = new DocumentItem(0);
+                    $obj->setAttribute($val);
+                    $document_list[] = $obj;
+                }
+            }
+
+            $oRss->rss($document_list, $this->module_info->browser_title);
+            $this->setTemplatePath($oRss->getTemplatePath());
+            $this->setTemplateFile($oRss->getTemplateFile());
+        }
     }
 ?>
