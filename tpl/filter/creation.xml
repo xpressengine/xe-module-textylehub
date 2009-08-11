@@ -1,0 +1,12 @@
+<filter name="creation" module="textylehub" act="procTextylehubCreate">
+    <form>
+        <node target="textyle_address" required="true" filter="user_id" minlength="4" maxlength="12"/>
+        <node target="blog_title" required="true" minlength="4" maxlength="20"/>
+        <node target="blog_description" required="true" minlength="4" maxlength="200"/>
+        <node target="accept_agree" required="true" />
+    </form>
+    <response>
+        <tag name="error" />
+        <tag name="message" />
+    </response>
+</filter>

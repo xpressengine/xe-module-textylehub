@@ -1,0 +1,16 @@
+<query id="getOwnTextyle" action="select">
+    <tables>
+        <table name="site_admin" alias="admin" />
+        <table name="sites" alias="sites" />
+        <table name="textyle" alias="textyle" />
+    </tables>
+    <columns>
+        <column name="sites.domain" alias="domain" />
+        <column name="textyle.*" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="admin.member_srl" var="member_srl" filter="number" notnull="notnull" />
+        <condition operation="equal" column="sites.site_srl" default="admin.site_srl" filter="number" notnull="notnull" pipe="and" />
+        <condition operation="equal" column="textyle.module_srl" default="sites.index_module_srl" filter="number" notnull="notnull" pipe="and" />
+    </conditions>
+</query>

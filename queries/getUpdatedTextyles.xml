@@ -1,0 +1,23 @@
+<query id="getUpdatedTextyles" action="select">
+    <tables>
+        <table name="sites" alias="sites" />
+        <table name="modules" alias="modules" />
+        <table name="textyle" alias="textyle" />
+        <table name="documents" alias="documents" />
+    </tables>
+    <columns>
+        <column name="sites.domain" alias="domain" />
+        <column name="textyle.textyle_title" alias="textyle_title"/>
+        <column name="textyle.textyle_content" alias="textyle_content"/>
+        <column name="documents.*" />
+    </columns>
+    <conditions>
+        <condition operation="in" column="documents.document_srl" var="document_srls" filter="numbers" notnull="notnull" pipe="and" />
+        <condition operation="equal" column="modules.module_srl" default="documents.module_srl" filter="number" notnull="notnull" pipe="and" />
+        <condition operation="equal" column="textyle.module_srl" default="modules.module_srl" filter="number" notnull="notnull" pipe="and" />
+        <condition operation="equal" column="sites.index_module_srl" default="textyle.module_srl" filter="number" notnull="notnull" pipe="and" />
+    </conditions>
+    <navigation>
+        <index var="sort_index" default="documents.list_order" order="asc" />
+    </navigation>
+</query>

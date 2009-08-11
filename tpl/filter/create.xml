@@ -1,0 +1,7 @@
+<filter name="create_textylehub" module="textylehub" act="procTextylehubAdminCreate" >
+    <form>
+        <node target="textylehub_id" required="true" maxlength="40" filter="alpha_number" />
+    </form>
+    <parameter />
+    <response />
+</filter>

@@ -1,0 +1,149 @@
+<!--#include("./header.html")-->
+<!--%import("filter/update_textylehub.xml")-->
+<!--%import("js/textylehub.js")-->
+<form action="./" method="post" onsubmit="return procFilter(this, update_textylehub)" enctype="multipart/form-data">
+
+    <table cellspacing="0" class="rowTable">
+
+    <tr>
+        <th scope="row"><div>{$lang->mid}</div></th>
+        <td>
+            <input type="text" name="textylehub_id" value="{$module_info->mid}" class="inputTypeText w200" />
+            <p>{$lang->about_mid}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->module_category}</div></th>
+        <td>
+            <select name="module_category_srl">
+                <option value="0">{$lang->notuse}</option>
+                <!--@foreach($module_category as $key => $val)-->
+                <option value="{$key}" <!--@if($module_info->module_category_srl==$key)-->selected="selected"<!--@end-->>{$val->title}</option>
+                <!--@end-->
+            </select>
+            <p>{$lang->about_module_category}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->browser_title}</div></th>
+        <td>
+            <input type="text" name="browser_title" value="{htmlspecialchars($module_info->browser_title)}"  class="inputTypeText w400" id="browser_title"/>
+            <a href="{getUrl('','module','module','act','dispModuleAdminLangcode','target','browser_title')}" onclick="popopen(this.href);return false;" class="buttonSet buttonSetting"><span>{$lang->cmd_find_langcode}</span></a>
+            <p>{$lang->about_browser_title}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->layout}</div></th>
+        <td>
+            <select name="layout_srl">
+            <option value="0">{$lang->notuse}</option>
+            <!--@foreach($layout_list as $key => $val)-->
+            <option value="{$val->layout_srl}" <!--@if($module_info->layout_srl==$val->layout_srl)-->selected="selected"<!--@end-->>{$val->title} ({$val->layout})</option>
+            <!--@end-->
+            </select>
+            <p>{$lang->about_layout}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->skin}</div></th>
+        <td>
+            <select name="skin">
+                <!--@foreach($skin_list as $key=>$val)-->
+                <option value="{$key}" <!--@if($module_info->skin==$key ||(!$module_info->skin && $key=='default'))-->selected="selected"<!--@end-->>{$val->title}</option>
+                <!--@end-->
+            </select>
+            <p>{$lang->about_skin}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->textyle_creation_type}</div></th>
+        <td>
+            <label for="chkTextyleVid"><input type="radio" id="chkTextyleVid" name="access_type" value="vid" onclick="toggleTextyleAccessType('vid');" <!--@if($module_info->access_type=='vid')-->checked="checked"<!--@end--> /> {$lang->access_vid}</label>
+            <label for="chkTextyleDomain"><input type="radio" id="chkTextyleDomain" name="access_type" value="domain" onclick="toggleTextyleAccessType('domain');" <!--@if($module_info->access_type!='vid')-->checked="checked"<!--@end--> /> {$lang->access_domain}</label>
+            <div id="accessTextyleDomain" style="display:<!--@if($module_info->access_type=='vid')-->none<!--@end-->; margin-top:10px;">
+                URL : <input type="text" name="default_domain" value="{$module_info->default_domain}" class="inputTypeText w200" />
+            </div>
+            <p>{$lang->about_textyle_creation_type}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->textyle_creation_count}</div></th>
+        <td>
+            <input type="text" name="textyle_creation_count" value="{$module_info->textyle_creation_count}"  class="inputTypeText" />
+            <p>{$lang->about_textyle_creation_count}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->newest_documents_count}</div></th>
+        <td>
+            <input type="text" name="newest_documents_count" value="{$module_info->newest_documents_count}"  class="inputTypeText" />
+            <p>{$lang->about_newest_documents_count}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->newest_textyles_count}</div></th>
+        <td>
+            <input type="text" name="newest_textyles_count" value="{$module_info->newest_textyles_count}"  class="inputTypeText" />
+            <p>{$lang->about_newest_textyles_count}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->sub_newest_textyles_count}</div></th>
+        <td>
+            <input type="text" name="sub_newest_textyles_count" value="{$module_info->sub_newest_textyles_count}"  class="inputTypeText" />
+            <p>{$lang->about_sub_newest_textyles_count}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->newest_comments_count}</div></th>
+        <td>
+            <input type="text" name="newest_comments_count" value="{$module_info->newest_comments_count}"  class="inputTypeText" />
+            <p>{$lang->about_newest_comments_count}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->newest_trackbacks_count}</div></th>
+        <td>
+            <input type="text" name="newest_trackbacks_count" value="{$module_info->newest_trackbacks_count}"  class="inputTypeText" />
+            <p>{$lang->about_newest_trackbacks_count}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->textyle_agreement}</div></th>
+        <td>
+            <textarea name="textyle_agreement" class="inputTypeTextArea fullWidth">{htmlspecialchars($module_info->textyle_agreement)}</textarea>
+            <p>{$lang->about_textyle_agreement}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->description}</div></th>
+        <td>
+            <textarea name="description" class="inputTypeTextArea fullWidth">{htmlspecialchars($module_info->description)}</textarea>
+            <p>{$lang->about_description}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->header_text}</div></th>
+        <td>
+            <textarea name="header_text" class="inputTypeTextArea fullWidth" id="header_text">{htmlspecialchars($module_info->header_text)}</textarea>
+            <a href="{getUrl('','module','module','act','dispModuleAdminLangcode','target','header_text')}" onclick="popopen(this.href);return false;" class="buttonSet buttonSetting"><span>{$lang->cmd_find_langcode}</span></a>
+            <p>{$lang->about_header_text}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->footer_text}</div></th>
+        <td>
+            <textarea name="footer_text" class="inputTypeTextArea fullWidth" id="footer_text">{htmlspecialchars($module_info->footer_text)}</textarea>
+            <a href="{getUrl('','module','module','act','dispModuleAdminLangcode','target','footer_text')}" onclick="popopen(this.href);return false;" class="buttonSet buttonSetting"><span>{$lang->cmd_find_langcode}</span></a>
+            <p>{$lang->about_footer_text}</p>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="2" class="button">
+            <span class="button black strong"><input type="submit" value="{$lang->cmd_registration}" accesskey="s" /></span>
+            <span class="button"><input type="button" value="{$lang->cmd_back}" onclick="history.back(); return false;" /></span>
+        </th>
+	</tr>
+    </table>
+
+</form>

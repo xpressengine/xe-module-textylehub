@@ -1,0 +1,61 @@
+<!--#include("_header.html")-->
+
+		<!-- .postList -->
+		<div class="postList">
+			
+			<!-- .postListHeader -->
+			<div class="postListHeader">
+				<h2 class="h2">{$lang->textyle_list}</h2>
+			</div>
+			<!-- /.postListHeader -->
+			
+			<!-- .postListBody -->
+            <!--@if($hub->textyles)-->
+			<div class="postListBody">
+                <!--@if(count($hub->textyles))-->
+				<ul class="memberList">
+                    <!--@foreach($hub->textyles as $val)-->
+					<li>
+						<h3 class="postTitle"><a href="{getSiteUrl($val->domain)}"><img src="{$val->photo_src}" width="80" height="80" alt="" class="thumb" /> {htmlspecialchars($val->textyle_title)}</a></h3>
+						<p class="postSummary">{htmlspecialchars($val->textyle_content)}</p>
+
+						<dl class="blogMeta">
+							<dt>{$lang->posts}</dt>
+							<dd>{number_format($val->document_count)}</dd>
+							<dt>{$lang->comment}</dt>
+							<dd>{number_format($val->comment_count)}</dd>
+							<dt>{$lang->trackback}</dt>
+							<dd>{number_format($val->trackback_count)}</dd>
+						</dl>
+					</li>
+                    <!--@end-->
+				</ul>
+                <!--@end-->
+			</div>
+			<!-- /.postListBody -->
+			
+                <!-- .pagination -->
+                <!--@if($page_navigation)-->
+                <div class="pagination">
+                    <!--@if($page_navigation->cur_page-10>0)--><a href="{getUrl('page', $page_navigation->cur_page-10)}" class="nav prev10"><span>move prev 10 page</span></a><!--@end-->
+                    <!--@if($page_navigation->cur_page>1)--><a href="{getUrl('page', $page_navigation->cur_page-1)}" class="nav prev1"><span>move prev page</span></a><!--@end-->
+                    <!--@while($page_no = $page_navigation->getNextPage())-->
+                    <!--@if($page_navigation->cur_page == $page_no)-->
+                        <strong>{$page_no}</strong> 
+                    <!--@else-->
+                        <a href="{getUrl('page',$page_no)}">{$page_no}</a>
+                    <!--@end-->
+                    <!--@end-->
+                    <!--@if($page_navigation->cur_page<$page_navigation->total_page)--><a href="{getUrl('page', $page_navigation->cur_page+1)}" class="nav next1"><span>move next page</span></a><!--@end-->
+                    <!--@if($page_navigation->cur_page+10<$page_navigation->total_page)--><a href="{getUrl('page', $page_navigation->cur_page+10)}" class="nav next10"><span>move next 10 page</span></a><!--@end-->
+                </div>
+                <!-- /.pagination -->
+                <!--@end-->
+            <!--@else-->
+                {$lang->no_textyles}
+            <!--@end-->
+			
+		</div>
+		<!-- /.postList -->
+
+<!--#include("_footer.html")-->

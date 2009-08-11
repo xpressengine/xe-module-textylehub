@@ -1,0 +1,45 @@
+<!--#include("_header.html")-->
+
+		<!-- .contentHeader -->
+		<div class="postListHeader">
+			<h2 class="h2">{$lang->cmd_create_textyle}</h2>
+		</div>
+		<!-- /.contentHeader -->
+		<!-- .blogCreation -->
+		<form action="./" method="post" onsubmit="if(!jQuery('#userAgreement').get(0).checked) {alert('{$lang->about_textyle_agreement}');return false;} return procFilter(this,creation);" class="blogCreation">
+            <input type="hidden" name="mid" value="{$module_info->mid}" />
+			<fieldset>
+				<table border="1" cellspacing="0">
+					<tr>
+						<th scope="row"><label for="blogAddress">{$lang->textyle_address}</label></th>
+						<td>
+                            <!--@if($module_info->access_type == 'vid')-->
+							<p>{getFullUrl()}<input name="textyle_address" type="text" class="inputText blogAddress" id="blogAddress" /></p>
+                            <!--@else-->
+							<p>http://<input name="textyle_address" type="text" class="inputText blogAddress" id="blogAddress" />.{$module_info->default_domain}</p>
+                            <!--@end-->
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="blogTitle">{$lang->blog_title}</label></th>
+						<td><input name="blog_title" type="text" value="{$logged_info->nick_name}`s Textyle" class="inputText" id="blogTitle" /></td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="blogInfo">{$lang->blog_description}</label></th>
+						<td><input name="blog_description" type="text" class="inputText" id="blogInfo" /></td>
+					</tr>
+					<tr>
+						<th scope="row">{$lang->textyle_agreement}</th>
+						<td>
+							<div class="userAgreement">{$module_info->textyle_agreement}</div>
+							<p class="check"><input name="accept_agree" type="checkbox" value="Y" class="inputCheck" id="userAgreement" /> <label for="userAgreement">{$lang->cmd_agree}</label></p>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+			<span class="tcb tcbLarge strong"><input type="submit" value="{$lang->cmd_create_textyle}" /></span>
+			<span class="tcb tcbLarge"><button type="reset" onclick="location.href='{getUrl('act','')}';return false;">{$lang->cmd_cancel}</button></span>
+		</form>
+		<!-- .blogCreation -->
+		
+<!--#include("_footer.html")-->

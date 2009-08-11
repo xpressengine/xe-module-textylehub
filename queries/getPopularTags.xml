@@ -1,0 +1,21 @@
+<query id="getPopularTags" action="select">
+    <tables>
+        <table name="modules" alias="modules"/>
+        <table name="tags" alias="tags"/>
+    </tables>
+    <columns>
+        <column name="tags.tag" />
+        <column name="count(*)" alias="count" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="modules.module" default="textyle" pipe="and" />
+        <condition operation="equal" column="tags.module_srl" default="modules.module_srl" pipe="and" />
+    </conditions>
+    <navigation>
+        <index var="count" default="count" order="desc" />
+        <list_count var="list_count" default="30" />
+    </navigation>
+    <groups>
+        <group column="tags.tag" />
+    </groups>
+</query>

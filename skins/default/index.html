@@ -1,0 +1,79 @@
+<!--#include("_header.html")-->
+
+        <!--@if($module_info->intro_text)-->
+		<div class="userDefine">
+            <!--@if($module_info->intro_image)-->
+			<img src="{$module_info->intro_image}" alt="" />
+            <!--@end-->
+            <!--@if($module_info->intro_text)-->
+            <!--@end-->
+            <p class="introText">{$module_info->intro_text}</p>
+		</div>
+        <!--@end-->
+		
+		<!-- .postList -->
+		<div class="postList">
+			
+			<!-- .postListHeader -->
+			<div class="postListHeader">
+				<h2 class="h2">{$lang->newest_posts}</h2>
+				<form action="{getUrl('')}" method="get" class="postSearch">
+                    <input type="hidden" name="mid" value="{$module_info->mid}" />
+					<fieldset>
+						<legend>{$lang->cmd_search}</legend>
+						<select name="search_target">
+							<option value="title">{$lang->title}</option>
+							<option value="tag" <!--@if($search_target=='tag')-->selected="selected"<!--@end-->>{$lang->tag}</option>
+							<option value="content" <!--@if($search_target=='content')-->selected="selected"<!--@end-->>{$lang->content}</option>
+						</select>
+						<input name="search_keyword" type="text" value="{htmlspecialchars($search_keyword)}" title="{$lang->cmd_search}" class="inputText" />
+                        <!--@if($search_target && $search_keyword)-->
+						<span class="tcb tcbMedium"><input type="button" value="{$lang->cmd_cancel}" onclick="location.href='{getUrl('','mid',$module_info->mid)}'; return false;"/></span>
+                        <!--@else-->
+						<span class="tcb tcbMedium"><input type="submit" value="{$lang->cmd_search}" /></span>
+                        <!--@end-->
+					</fieldset>
+				</form>
+			</div>
+			<!-- /.postListHeader -->
+			
+            <!--@if(count($hub->posts))-->
+                <!-- .postListBody -->
+                <div class="postListBody">
+                    <ul class="postList">
+                        <!--@foreach($hub->posts as $key => $val)-->
+                        <li>
+                            <h3 class="postTitle"><a href="{$val->getPermanentUrl()}"><!--@if($val->thumbnailExists())--><img src="{$val->getThumbnail(95,95)}" width="95" height="95" alt="" class="thumb" /><!--@end-->{$val->getTitle()}</a> <!--@if($val->getCommentCount())--><em>[{$val->getCommentCount()}]</em><!--@end--></h3>
+                            <p class="postMeta"><span class="userName">by <a href="#" onclick="return false;" class="member_{$val->get('member_srl')}">{$val->getNickName()}</a></span> <span class="ymd">{$val->getRegdate("y.m.d")}</span> <span class="hm">{$val->getRegdate("H:i")}</span></p>
+                            <p class="postSummary">{$val->getSummary(140)}</p>
+                        </li>
+                        <!--@end-->
+                    </ul>
+                </div>
+                <!-- /.postListBody -->
+                
+                <!-- .pagination -->
+                <!--@if($page_navigation)-->
+                <div class="pagination">
+                    <!--@if($page_navigation->cur_page-10>0)--><a href="{getUrl('page', $page_navigation->cur_page-10)}" class="nav prev10"><span>move prev 10 page</span></a><!--@end-->
+                    <!--@if($page_navigation->cur_page>1)--><a href="{getUrl('page', $page_navigation->cur_page-1)}" class="nav prev1"><span>move prev page</span></a><!--@end-->
+                    <!--@while($page_no = $page_navigation->getNextPage())-->
+                    <!--@if($page_navigation->cur_page == $page_no)-->
+                        <strong>{$page_no}</strong> 
+                    <!--@else-->
+                        <a href="{getUrl('page',$page_no)}">{$page_no}</a>
+                    <!--@end-->
+                    <!--@end-->
+                    <!--@if($page_navigation->cur_page<$page_navigation->total_page)--><a href="{getUrl('page', $page_navigation->cur_page+1)}" class="nav next1"><span>move next page</span></a><!--@end-->
+                    <!--@if($page_navigation->cur_page+10<$page_navigation->total_page)--><a href="{getUrl('page', $page_navigation->cur_page+10)}" class="nav next10"><span>move next 10 page</span></a><!--@end-->
+                </div>
+                <!-- /.pagination -->
+                <!--@end-->
+            <!--@else-->
+                {$lang->no_posts}
+            <!--@end-->
+			
+		</div>
+		<!-- /.postList -->
+
+<!--#include("_footer.html")-->

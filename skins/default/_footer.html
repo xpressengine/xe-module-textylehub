@@ -1,0 +1,116 @@
+		
+	</div>
+	<!-- /.textyleContent -->
+	
+	<hr />
+	
+	<!-- .textyleExtension -->
+	<div class="textyleExtension">
+	
+        <!--@if($is_logged)-->
+		<!-- .userAccount -->
+		<div class="userAccount">
+			<div class="userTop">
+				<h2>{sprintf($lang->msg_greeting, htmlspecialchars($logged_info->nick_name))}</h2>
+				<span class="tcb tcbSmall logOut"><a href="{getUrl('act','dispMemberLogout')}">{$lang->cmd_logout}</a></span>
+                <!--@if($logged_info->is_admin == 'Y')-->
+				<ul class="communityInfo">
+					<li>{$lang->created_textyle_count} : <em>{$hub->total_textyle_count}</em></li>
+					<li><a href="{getUrl('','module','admin','act','dispTextyleAdminList')}">{$lang->cmd_management}</a></li>
+				</ul>
+                <!--@end-->
+			</div>
+            <!--@if($hub->own_textyle)-->
+			<ul class="blogList">
+                <!--@foreach($hub->own_textyle as $val)-->
+				<li><a href="{getSiteUrl($val->domain)}">{htmlspecialchars(cut_str($val->textyle_title),30)}</a> <span class="tcb tcbSmall"><a href="{getSiteUrl($val->domain,'','act','dispTextyleToolDashboard')}">{$lang->cmd_management}</a></span></li>
+                <!--@end-->
+			</ul>
+            <!--@end-->
+            <!--@if($hub->enable_creation)-->
+			<span class="tcb tcbLarge strong"><a href="{getUrl('act','dispTextylehubCreate')}">{$lang->cmd_create_textyle}</a></span>
+            <!--@end-->
+		</div>
+		<!-- /.userAccount -->
+        <!--@end-->
+		
+		<!-- .userUpdate -->
+		<div class="userUpdate">
+        
+            <!--@if($hub->newest_posts)-->
+            <div class="textyleSection blogUpdate">
+                <h2>{$lang->newest_posts}</h2>
+                <ul>
+                    <!--@foreach($hub->newest_posts as $val)-->
+                    <li><a href="{$val->getPermanentUrl()}" class="blogTitle"><!--@if($val->thumbnailExists())--><img src="{$val->getThumbnail(39,39)}" width="39" height="39" alt="" class="userThumb" /><!--@end-->{$val->getTitle(24)}</a> <span class="blogMeta"><a class="userName member_{$val->get('member_srl')}">{$val->getNickName()}</a> <span class="ymd">{$val->getRegdate("y.m.d")}</span> <span class="hm">{$val->getRegdate("H:i")}</span></span></li>
+                    <!--@end-->
+                </ul>
+                <a href="{getUrl('','mid',$module_info->mid)}" class="more">{$lang->more}</a>
+            </div>
+            <!--@end-->
+		
+            <div class="textyleSection blogUpdate">
+                <h2>{$lang->updated_textyle}</h2>
+                <!--@if(count($hub->updated_textyles))-->
+                <ul>
+                    <!--@foreach($hub->updated_textyles as $val)-->
+                    <li><a href="{getSiteUrl($val->domain)}" class="blogTitle"><img src="{$val->photo_src}" width="39" height="39" alt="" class="userThumb" />{htmlspecialchars(cut_str($val->textyle_title),24)}</a> <span class="blogMeta"><a class="userName member_{$val->member_srl}">{$val->nick_name}</a> <span class="ymd">{zdate($val->regdate,"y.m.d")}</span> <span class="hm">{zdate($val->regdate,"H:i")}</span></span></li>
+                    <!--@end-->
+                </ul>
+                <a href="{getUrl('act','dispTextylehubUpdated')}" class="more">{$lang->more}</a>
+                <!--@else-->
+                    {$lang->no_textyles}
+                <!--@end-->
+            </div>
+			
+			<!-- .reply -->
+			<div class="textyleSection blogReply">
+				<h2>{$lang->newest_comment}</h2>
+                <!--@if(count($hub->newest_comment))-->
+				<ul>
+                    <!--@foreach($hub->newest_comment as $val)-->
+					<li><a href="{$val->getPermanentUrl()}">{$val->getSummary(26)}</a></li>
+                    <!--@end-->
+				</ul>
+                <!--@else-->
+                    {$lang->no_comments}
+                <!--@end-->
+			</div>
+			<!-- /.reply -->
+			
+			<!-- .trackback -->
+			<div class="textyleSection blogTrackback">
+				<h2>{$lang->newest_trackback}</h2>
+                <!--@if(count($hub->newest_trackback))-->
+				<ul>
+                    <!--@foreach($hub->newest_trackback as $val)-->
+					<li><a href="{getUrl('','document_srl',$val->document_srl)}#trackback">{htmlspecialchars(cut_str($val->title,26))}</a></li>
+                    <!--@end-->
+				</ul>
+                <!--@else-->
+                    {$lang->no_trackbacks}
+                <!--@end-->
+			</div>
+			<!-- /.trackback -->
+
+            <!--@if(count($hub->tags))-->
+			<!-- .tag -->
+			<div class="textyleSection blogTag">
+				<h2>{$lang->tag}</h2>
+				<ul class="widgetTagCloud">
+                    <!--@foreach($hub->tags as $key => $val)-->
+					<li class="level{$val->rank}"><a href="{getUrl('search_target','tag','search_keyword',$val->tag)}">{$val->tag}</a></li>
+                    <!--@end-->
+				</ul>
+			</div>
+			<!-- /.tag -->
+            <!--@end-->
+			
+		</div>
+		<!-- /.userUpdate -->
+		
+	</div>
+	<!-- /.textyleExtension -->
+	
+</div>
+<!-- /.textyleBody -->

@@ -1,0 +1,206 @@
+@charset "utf-8";
+/* NHN > UIT Center > Open UI Technology Team > Jeong Chan Myeong(dece24@nhncorp.com) */
+
+/* textyleBody Layout */
+.textyleBody{ position:relative; padding-top:30px; padding-bottom:30px; *zoom:1; font-size:12px; font-family:Tahoma, AppleGothic, Sans-Serif;}
+.textyleBody:after{ content:""; display:block; clear:both;}
+.textyleBody.textyleCE{ padding-right:280px;}
+.textyleBody.textyleEC{ padding-left:280px;}
+
+.textyleBody hr{ display:none;}
+.textyleBody img{ border:0;}
+.textyleBody fieldset{ border:0; padding:0; margin:0;}
+.textyleBody legend{ position:absolute; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;}
+
+.textyleBody a{ text-decoration:none;}
+.textyleBody a:hover,
+.textyleBody a:active,
+.textyleBody a:focus{ text-decoration:underline;}
+
+.textyleContent{ position:relative; width:100%; margin:0;}
+.textyleCE .textyleContent{ float:left;}
+.textyleEC .textyleContent{ float:right;}
+
+.textyleExtension{ position:relative; width:245px;}
+.textyleCE .textyleExtension{ left:280px; float:right; margin-left:-245px;}
+.textyleEC .textyleExtension{ right:280px; float:left; margin-right:-245px;}
+
+/* textyleContent */
+.textyleContent .userDefine{ line-height:1.5; margin:0 0 40px 0; overflow:hidden; }
+.textyleContent .userDefine p.introText { position:absolute; left:0; top:0; }
+
+/* userAccount */
+.userAccount{ padding:35px 0 20px 0; margin:0 0 10px 0; border:1px solid #e2e2e2; background:#fafafa;}
+.userAccount .userTop{ padding:0 0 15px 0; margin:0 20px 11px 20px; background:url(../img/lineHrAccount.gif) repeat-x left bottom;}
+.userAccount .userTop h2{ margin:0 0 12px 0; font-size:12px; font-weight:normal; color:#333; vertical-align:top;}
+.userAccount .userTop .logOut{ position:absolute; top:33px; right:21px;}
+
+.userAccount .communityInfo{ position:relative; margin:0; padding:1px 0 2px 0; list-style:none; *zoom:1; overflow:hidden;}
+.userAccount .communityInfo:after{ content:""; display:block; clear:both;}
+.userAccount .communityInfo li{ position:relative; left:-5px; padding:0 4px; font-size:11px; height:9px; font-family:Dotum; float:left; border-left:1px solid #dedede; color:#555;}
+.userAccount .communityInfo li a{ color:#555;}
+.userAccount .communityInfo li em{ font-style:normal; color:#fd565e; font-size:9px; font-family:Tahoma;}
+
+.userAccount .blogList{ position:relative; margin:0 20px; padding:0 0 15px 0; list-style:none; *zoom:1;}
+.userAccount .blogList li{ padding:0 0 0 6px; margin:0 0 8px 0; position:relative; background:url(../img/iconList2.gif) no-repeat left center;}
+.userAccount .blogList li a{ color:#666;}
+.userAccount .blogList li .tcbSmall{ position:absolute; top:-2px; right:0;}
+
+.userAccount .tcbLarge{ left:20px; width:201px;}
+.userAccount .tcbLarge *{ padding:0; width:201px;}
+
+/* userUpdate */
+.userUpdate{ position:relative; padding:28px 0 1px 0; border:1px solid #e2e2e2; *zoom:1;}
+.userUpdate .textyleSection{ margin:0 20px 40px 20px; position:relative; *zoom:1;}
+.userUpdate .textyleSection h2{ font-size:12px; margin:0 0 15px 0; padding:0 0 6px 0; border-bottom:2px solid #e1e1e1;}
+.userUpdate .textyleSection .more{ position:absolute; top:0; right:0; padding:0 7px 0 0; color:#b4b4b4; background:url(../img/iconMore.gif) no-repeat right center;}
+.userUpdate .textyleSection ul{ list-style:none; margin:0; padding:0;}
+.userUpdate .textyleSection li{ padding:0 0 0 7px; margin:0 0 5px 0; background:url(../img/iconList3.gif) no-repeat left 6px;}
+.userUpdate .textyleSection li a{ color:#888;}
+
+/* blogUpdate */
+.userUpdate .blogUpdate li{ background:none; padding:0; margin:0 0 10px 0; clear:both; *zoom:1;}
+.userUpdate .blogUpdate li:after{ content:""; display:block; clear:both;}
+.userUpdate .blogUpdate .userThumb{ float:left; margin:0 8px 0 0;}
+.userUpdate .blogUpdate .blogTitle{ color:#3f3f3f;}
+.userUpdate .blogUpdate .blogMeta{ display:block; padding:5px 0 0 0;}
+.userUpdate .blogUpdate .userName{ color:#979797; margin:0 3px 0 0; font-size:11px; font-family:Dotum; cursor:pointer;}
+.userUpdate .blogUpdate .userName a { color:#979797; text-decoration:none; }
+.userUpdate .blogUpdate .ymd{ display:inline-block; height:10px; font-size:9px; padding:0 0 0 7px; color:#979797; border-left:1px solid #d5d5d5;}
+.userUpdate .blogUpdate .hm{ display:inline-block; height:10px; font-size:9px; color:#979797;}
+
+/* widgetTagCloud */
+.widgetTagCloud { text-align:justify; font-size:12px; line-height:1.5; margin:0; padding:0;}
+.widgetTagCloud li{ display:inline; list-style:none; margin:0 !important; padding:0 !important; background:none !important;}
+.widgetTagCloud li a{ white-space:nowrap; font-family:Dotum;}
+.widgetTagCloud li.level4 a{ font-size:12px; color:#999 !important;}
+.widgetTagCloud li.level3 a{ font-size:12px; color:#666 !important;}
+.widgetTagCloud li.level2 a{ font-size:12px; font-weight:bold; color:#444 !important;}
+.widgetTagCloud li.level1 a{ font-size:14px; font-weight:bold; color:#000 !important;}
+
+/* postList */
+.postListHeader{ position:relative; margin:0 0 10px 0;}
+.postListHeader h2.h2{ color:#333; font-size:12px; margin:0; padding:3px 0 6px 9px;}
+.postListHeader h2.info{ color:#333; font-size:12px; margin:0; padding:3px 0 6px 9px; font-weight:normal;}
+.postListHeader h2.info strong{ color:#fd565e;}
+.postListHeader .postSearch{ margin:0; padding:0; position:absolute; top:0; right:10px; _text-align:right;}
+.postListHeader .postSearch .inputText{ padding:4px 0 0 4px; height:17px; width:139px; border:1px solid #d2d2d2; font-size:12px; line-height:normal; vertical-align:middle;}
+.postListHeader .postSearch select{ height:23px; font-size:12px; vertical-align:middle;}
+
+.postListBody{ position:relative; border-top:1px solid #e5e5e5;}
+.postListBody ul{ list-style:none; margin:0; padding:0;}
+.postListBody li{ position:relative; padding:15px 0; border-bottom:1px solid #e5e5e5; clear:both; *zoom:1;}
+.postListBody li:after{ content:""; display:block; clear:both;}
+.postListBody h3.postTitle{ font-size:12px; margin:0 0 5px 0;}
+.postListBody h3.postTitle a{ color:#333;}
+.postListBody h3.postTitle em{ font-size:9px; color:#fd565e; font-style:normal;}
+.postListBody .thumb{ float:left; margin:0 19px 0 0; border:1px solid #e3e3e3;}
+.postListBody .postMeta{ margin:0 0 8px 0;}
+.postListBody .userName{ color:#979797; margin:0 3px 0 0; font-size:11px; font-family:Dotum;}
+.postListBody .userName a { color:#979797; text-decoration:none; }
+.postListBody .ymd{ display:inline-block; height:10px; font-size:9px; padding:0 0 0 7px; color:#979797; border-left:1px solid #d5d5d5;}
+.postListBody .hm{ display:inline-block; height:10px; font-size:9px; color:#979797;}
+.postListBody .postSummary{ color:#666; line-height:1.5; margin:0 0 3px 0;}
+
+.postListBody .postList li{}
+.postListBody .postList h3.postTitle{ padding:10px 0 0 0;}
+.postListBody .postList .thumb{ position:relative; top:-10px; margin:0 19px -10px 0;}
+.postListBody .memberList{}
+
+.postListBody .blogTags{ margin:0 0 12px 0; padding:0;}
+.postListBody .blogTags *{ display:inline;}
+.postListBody .blogTags dt{ color:#777;}
+.postListBody .blogTags dd{ color:#b3b3b3; margin:0;}
+
+.postListBody .blogMeta{ position:relative; overflow:hidden; margin:0; padding:10px 0;; color:#9a9a9a; *zoom:1;}
+.postListBody .blogMeta:after{ content:""; display:block; clear:both;}
+.postListBody .blogMeta dt{ position:relative; left:-9px; float:left; height:9px; line-height:9px; border-left:1px solid #e5e5e5; padding:0 0 0 8px;}
+.postListBody .blogMeta dd{ position:relative; left:-9px; float:left; height:9px; line-height:9px; margin:0; font-size:12px; padding:0 8px 0 8px;}
+
+/* tagListBody */
+.tagListBody{ padding:20px 0; border-top:1px solid #e5e5e5; line-height:1.2;}
+.tagListBody *{ margin:0; padding:0;}
+.tagListBody ul{ text-align:justify; list-style:none;}
+.tagListBody li{ display:inline; margin:0 3px; }
+.tagListBody li a{ color:#666; font-family:Dotum; white-space:nowrap;}
+.tagListBody li.rank1 a{ font-weight:bold; font-size:18px; color:#fff; background:#a2b9d5;}
+.tagListBody li.rank2 a{ font-weight:bold; font-size:18px; color:#4bcfd0;}
+.tagListBody li.rank3 a{ font-weight:bold; font-size:14px; color:#648ab9;}
+.tagListBody li.rank4 a{ font-size:12px;}
+
+/* contentHeader */
+.contentHeader{position:relative; margin:0 0 10px 0; border-bottom:1px solid #e5e5e5; *zoom:1;}
+.contentHeader h2.h2{color:#333; font-size:12px; margin:0; padding:3px 0 6px 9px;}
+
+/* blogCreation */
+.blogCreation{ margin:0; padding:0; text-align:center;}
+.blogCreation fieldset{ margin:0 0 30px 0; padding:0;}
+.blogCreation table{ border:0; width:100%; text-align:left;}
+.blogCreation th,
+.blogCreation td{ border:0; padding-top:15px; padding-bottom:15px; border-bottom:1px solid #e5e5e5; text-align:left; vertical-align:top;}
+.blogCreation th{ color:#666; padding-left:15px; padding-right:30px; white-space:nowrap;}
+.blogCreation td{ color:#666; width:100%;}
+.blogCreation td p{ margin:0;}
+.blogCreation td .error{ display:none; color:#fd565e; margin:3px 0;}
+.blogCreation td .error.open{ display:block;}
+.blogCreation td .inputText{ width:92%; *width:400px; border:1px solid #c6c6c6; padding:4px 9px 0 9px; height:17px; font-size:12px; vertical-align:middle;}
+.blogCreation td .inputText.blogAddress{ width:100px; text-align:center;}
+.blogCreation td .inputCheck{ width:13px; height:13px; margin:0; vertical-align:middle;}
+.blogCreation td .userAgreement{ width:92%; *width:400px; border:1px solid #cacaca; line-height:1.5; white-space:pre; padding:9px; height:120px; overflow:auto; *overflow-x:hidden;}
+.blogCreation td .check{ font-weight:bold; margin:8px 0;}
+
+/* pagination */
+.pagination{ text-align:center; padding:30px 0;}
+.pagination a,
+.pagination strong{ position:relative; font-weight:bold; font-size:11px; display:inline-block; height:18px; line-height:18px; background-image:url(../img/linePagination.gif); background-repeat:no-repeat; background-position:left center; vertical-align:middle; padding:0 8px; margin:0 -4px 0 0;}
+.pagination a{ color:#333;} 
+.pagination strong{ color:#fd565e;}
+.pagination .nav{ display:inline-block; background-image:url(../img/buttonPagination.gif); background-repeat:no-repeat; border:0; padding:0; margin:0; width:20px; background-color:#fff;}
+.pagination .nav span{ position:absolute; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;}
+.pagination .prev10{ background-position:0 center;}
+.pagination .prev1{ background-position:-20px center; margin-right:-5px; z-index:2;}
+.pagination .next1{ background-position:-30px center;}
+.pagination .next10{ background-position:-50px center;}
+
+/* textyle content button */
+.tcb,
+.tcb a,
+.tcb button,
+.tcb input{ position:relative; display:inline-block; border:0; background-color:transparent; background-image:url(../img/buttonTC.gif); background-repeat:no-repeat; text-decoration:none !important; vertical-align:middle; cursor:pointer; overflow:visible; text-align:center;}
+
+.tcb{ margin-right:2px;}
+.tcb a,
+.tcb button,
+.tcb input{ *vertical-align:top; left:2px;}
+
+.tcbSmall,
+.tcbSmall *{ height:20px;}
+.tcbSmall{ background-position:left top;}
+.tcbSmall *{ font-size:11px; line-height:20px; font-family:Dotum; color:#555; background-position:right top; padding:0 5px 0 3px; letter-spacing:-1px;}
+
+.tcbMedium,
+.tcbMedium *{ height:24px;}
+.tcbMedium{ background-position:left -30px;}
+.tcbMedium *{ font-size:12px; line-height:24px; color:#000; background-position:right -30px; padding:0 10px 0 8px;}
+
+.tcbLarge,
+.tcbLarge *{ height:37px;}
+.tcbLarge{ background-position:left -60px;}
+.tcbLarge *{ font-size:12px; line-height:37px; color:#555; background-position:right -60px; padding:0 30px 0 28px;}
+
+.tcb.strong *{ font-weight:bold; color:#111;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
