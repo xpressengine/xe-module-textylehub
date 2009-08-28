@@ -27,7 +27,7 @@
 
 /* textyleContent */
 .textyleContent .userDefine{ line-height:1.5; margin:0 0 40px 0; overflow:hidden; }
-.textyleContent .userDefine p.introText { position:absolute; left:0; top:0; }
+.textyleContent .userDefine p.introText { margin:0; padding:0; }
 
 /* userAccount */
 .userAccount{ padding:35px 0 20px 0; margin:0 0 10px 0; border:1px solid #e2e2e2; background:#fafafa;}
@@ -80,7 +80,7 @@
 
 /* postList */
 .postListHeader{ position:relative; margin:0 0 10px 0;}
-.postListHeader h2.h2{ color:#333; font-size:12px; margin:0; padding:3px 0 6px 9px;}
+.postListHeader h2.h2{ color:#333; font-size:12px; margin:0; padding:0; }
 .postListHeader h2.info{ color:#333; font-size:12px; margin:0; padding:3px 0 6px 9px; font-weight:normal;}
 .postListHeader h2.info strong{ color:#fd565e;}
 .postListHeader .postSearch{ margin:0; padding:0; position:absolute; top:0; right:10px; _text-align:right;}

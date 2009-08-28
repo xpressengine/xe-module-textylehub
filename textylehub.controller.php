@@ -56,6 +56,7 @@
             $targs->textyle_title = $title;
             $targs->textyle_content = $description;
             $targs->module_srl = $module_srl;
+            executeQuery('textyle.updateTextyle', $targs);
 
             $this->setRedirectUrl(getSiteUrl($domain));
         }

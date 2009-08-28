@@ -1,13 +1,13 @@
 <!--#include("_header.html")-->
 
-        <!--@if($module_info->intro_text)-->
+        <!--@if($module_info->intro_image || $module_info->intro_text)-->
 		<div class="userDefine">
             <!--@if($module_info->intro_image)-->
 			<img src="{$module_info->intro_image}" alt="" />
             <!--@end-->
             <!--@if($module_info->intro_text)-->
-            <!--@end-->
             <p class="introText">{$module_info->intro_text}</p>
+            <!--@end-->
 		</div>
         <!--@end-->
 		
