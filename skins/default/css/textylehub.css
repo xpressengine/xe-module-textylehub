@@ -112,10 +112,10 @@
 .postListBody .blogTags dt{ color:#777;}
 .postListBody .blogTags dd{ color:#b3b3b3; margin:0;}
 
-.postListBody .blogMeta{ position:relative; overflow:hidden; margin:0; padding:10px 0;; color:#9a9a9a; *zoom:1;}
+.postListBody .blogMeta{ position:relative; margin:0; padding:10px 0; color:#9a9a9a; overflow:hidden; *zoom:1;}
 .postListBody .blogMeta:after{ content:""; display:block; clear:both;}
-.postListBody .blogMeta dt{ position:relative; left:-9px; float:left; height:9px; line-height:9px; border-left:1px solid #e5e5e5; padding:0 0 0 8px;}
-.postListBody .blogMeta dd{ position:relative; left:-9px; float:left; height:9px; line-height:9px; margin:0; font-size:12px; padding:0 8px 0 8px;}
+.postListBody .blogMeta dt{ position:relative; left:-9px; float:left; height:9px; line-height:9px; *line-height:normal; border-left:1px solid #e5e5e5; padding:0 0 0 8px;}
+.postListBody .blogMeta dd{ position:relative; left:-9px; float:left; height:9px; line-height:9px; *line-height:normal; margin:0; font-size:12px; padding:0 8px 0 8px;}
 
 /* tagListBody */
 .tagListBody{ padding:20px 0; border-top:1px solid #e5e5e5; line-height:1.2;}
