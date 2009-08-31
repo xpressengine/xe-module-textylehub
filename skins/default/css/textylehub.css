@@ -146,7 +146,7 @@
 .blogCreation td .inputText{ width:92%; *width:400px; border:1px solid #c6c6c6; padding:4px 9px 0 9px; height:17px; font-size:12px; vertical-align:middle;}
 .blogCreation td .inputText.blogAddress{ width:100px; text-align:center;}
 .blogCreation td .inputCheck{ width:13px; height:13px; margin:0; vertical-align:middle;}
-.blogCreation td .userAgreement{ width:92%; *width:400px; border:1px solid #cacaca; line-height:1.5; white-space:pre; padding:9px; height:120px; overflow:auto; *overflow-x:hidden;}
+.blogCreation td .userAgreement{ width:92%; *width:400px; border:1px solid #cacaca; line-height:1.5; padding:9px; height:120px; overflow:auto; *overflow-x:hidden;}
 .blogCreation td .check{ font-weight:bold; margin:8px 0;}
 
 /* pagination */
