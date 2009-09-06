@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin version="0.2">
     <title xml:lang="ko">Textyle Hub 기본 스킨</title>
+    <title xml:lang="zh-CN">Textyle Hub默认皮肤</title>
     <description xml:lang="ko">
         Textyle Hub 모듈의 기본 스킨입니다.
+    </description>
+    <description xml:lang="zh-CN">
+        Textyle Hub默认皮肤。
     </description>
     <version>0.1</version>
     <date>2009-08-10</date>
 
     <author email_address="dece24@gmail.com" link="http://naradesign.net/">
         <name xml:lang="ko">정찬명</name>
+	<name xml:lang="zh-CN">Chan-Myung Jeong</name>
     </author>
     <author email_address="mada79@naver.com" link="http://blog.naver.com/mada79">
         <name xml:lang="ko">김지은</name>
+	<name xml:lang="zh-CN">Ji-Eun Kim</name>
     </author>
     <author email_address="skklove@gmail.com" link="http://zero.textyle.kr/">
         <name xml:lang="ko">고영수</name>
+	<name xml:lang="zh-CN">Young-Soo Ko</name>
     </author>
 
     <colorset>
@@ -31,20 +38,28 @@
     <extra_vars>
         <var name="intro_image" type="image">
             <title xml:lang="ko">대문 배경 이미지</title>
+	    <title xml:lang="zh-CN">头部背景</title>
             <description xml:lang="ko">TextyleHub 첫 페이지의 상단에 표시될 대문의 배경 이미지를 등록할 수 있습니다.</description>
+            <description xml:lang="zh-CN">可上传显示在TextyleHub头部的背景图片。</description>
         </var>
         <var name="intro_text" type="textarea">
             <title xml:lang="ko">대문 글</title>
+	    <title xml:lang="zh-CN">简单描述</title>
             <description xml:lang="ko">대문의 내용을 입력하실 수 있습니다 (HTML 태그를 그대로 쓸 수 있습니다)</description>
+	    <description xml:lang="zh-CN">可输入首页简单描述(可以使用HTML标签)。</description>
         </var>
         <var name="content_type" type="select">
             <title xml:lang="ko">컨텐츠 구조</title>
+	    <title xml:lang="zh-CN">布局样式</title>
             <description xml:lang="ko">본문과 추가정보의 위치를 변경할 수 있습니다</description>
+	    <description xml:lang="zh-CN">布置内容区与信息栏(侧栏)位置。</description>
             <options value="ce">
                 <title xml:lang="ko">본문 + 서브메뉴 영역 (기본)</title>
+		<title xml:lang="zh-CN">右侧信息栏(默认)</title>
             </options>
             <options value="ec">
                 <title xml:lang="ko">서브 메뉴 영역 + 본문</title>
+		<title xml:lang="zh-CN">左侧信息栏</title>
             </options>
         </var>
     </extra_vars>
