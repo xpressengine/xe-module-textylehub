@@ -20,6 +20,11 @@
             $logged_info = Context::get('logged_info');
             if(!$logged_info) return new Object(-1,'msg_invalid_request');
 
+            // before 트리거 호출
+            $obj = Context::getRequestVars();
+            $trigger_output = ModuleHandler::triggerCall('textylehub.procTextylehubCreate', 'before', $obj);
+            if(!$trigger_output->toBool()) return $trigger_output;
+
             $domain = Context::get('textyle_address');
             $title = Context::get('blog_title');
             $description = Context::get('blog_description');
@@ -59,6 +64,13 @@
             executeQuery('textyle.updateTextyle', $targs);
 
             $this->setRedirectUrl(getSiteUrl($domain));
+
+            $trigger_args = $obj;
+            $trigger_args->site_srl = $obj;
+            // before 트리거 호출
+            $obj = Context::getRequestVars();
+            $trigger_output = ModuleHandler::triggerCall('textylehub.procTextylehubCreate', 'after', $obj);
+            if(!$trigger_output->toBool()) return $trigger_output;
         }
 
     }
