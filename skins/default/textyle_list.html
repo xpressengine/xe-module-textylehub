@@ -16,7 +16,7 @@
 				<ul class="memberList">
                     <!--@foreach($hub->textyles as $val)-->
 					<li>
-						<h3 class="postTitle"><a href="{getSiteUrl($val->domain)}"><img src="{$val->photo_src}" width="80" height="80" alt="" class="thumb" /> {htmlspecialchars($val->textyle_title)}</a></h3>
+						<h3 class="postTitle"><a href="{getFullSiteUrl($val->domain)}"><img src="{$val->photo_src}" width="80" height="80" alt="" class="thumb" /> {htmlspecialchars($val->textyle_title)}</a></h3>
 						<p class="postSummary">{htmlspecialchars($val->textyle_content)}</p>
 
 						<dl class="blogMeta">

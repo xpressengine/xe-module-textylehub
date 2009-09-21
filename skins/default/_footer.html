@@ -23,7 +23,7 @@
             <!--@if($hub->own_textyle)-->
 			<ul class="blogList">
                 <!--@foreach($hub->own_textyle as $val)-->
-				<li><a href="{getSiteUrl($val->domain)}">{htmlspecialchars(cut_str($val->textyle_title),30)}</a> <span class="tcb tcbSmall"><a href="{getSiteUrl($val->domain,'','act','dispTextyleToolDashboard')}">{$lang->cmd_management}</a></span></li>
+				<li><a href="{getFullSiteUrl($val->domain)}">{htmlspecialchars(cut_str($val->textyle_title),30)}</a> <span class="tcb tcbSmall"><a href="{getFullSiteUrl($val->domain,'','act','dispTextyleToolDashboard')}">{$lang->cmd_management}</a></span></li>
                 <!--@end-->
 			</ul>
             <!--@end-->
@@ -69,7 +69,7 @@
                 <!--@if(count($hub->newest_comment))-->
 				<ul>
                     <!--@foreach($hub->newest_comment as $val)-->
-					<li><a href="{$val->getPermanentUrl()}">{$val->getSummary(26)}</a></li>
+					<li><a href="{getFullUrl('','document_srl',$val->document_srl)}">{$val->getSummary(26)}</a></li>
                     <!--@end-->
 				</ul>
                 <!--@else-->
@@ -84,7 +84,7 @@
                 <!--@if(count($hub->newest_trackback))-->
 				<ul>
                     <!--@foreach($hub->newest_trackback as $val)-->
-					<li><a href="{getUrl('','document_srl',$val->document_srl)}#trackback">{htmlspecialchars(cut_str($val->title,26))}</a></li>
+					<li><a href="{getFullUrl('','document_srl',$val->document_srl)}#trackback">{htmlspecialchars(cut_str($val->title,26))}</a></li>
                     <!--@end-->
 				</ul>
                 <!--@else-->
