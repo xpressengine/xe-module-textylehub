@@ -1,4 +1,10 @@
 <?php
+    /**
+     * @file   ko.lang.php
+     * @author ? 
+     * @brief  Textyle Hub 
+     **/
+
     $lang->textylehub = 'Textyle Hub';
     $lang->about_textylehub = "Textyle Hub는 분양된 Textyle의 최신글을 모아 보여주고 또 생성된 Textyle의 업데이트 정보를 제공합니다.\n또한 권한이 있는 회원이 직접 Textyle을 개설할 수 있도록 합니다";
 
