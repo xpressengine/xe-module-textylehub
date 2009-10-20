@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin version="0.2">
     <title xml:lang="ko">Textyle Hub 기본 스킨</title>
+	<title xml:lang="vi">Skin mặc định Textyle Hub</title>
     <title xml:lang="zh-CN">Textyle Hub默认皮肤</title>
     <title xml:lang="jp">Textyle Hub基本スキン</title>
     <description xml:lang="ko">
         Textyle Hub 모듈의 기본 스킨입니다.
+    </description>
+	<description xml:lang="vi">
+        Skin mặc định cho Module Textyle Hub.
     </description>
     <description xml:lang="zh-CN">
         Textyle Hub默认皮肤。
@@ -19,16 +23,19 @@
         <name xml:lang="ko">정찬명</name>
         <name xml:lang="zh-CN">Chan-Myung Jeong</name>
         <name xml:lang="jp">Chan-Myung Jeong</name>
+		<name xml:lang="vi">Chan-Myung Jeong</name>
     </author>
     <author email_address="mada79@naver.com" link="http://blog.naver.com/mada79">
         <name xml:lang="ko">김지은</name>
         <name xml:lang="zh-CN">Ji-Eun Kim</name>
         <name xml:lang="jp">Ji-Eun Kim</name>
+		<name xml:lang="vi">Ji-Eun Kim</name>
     </author>
     <author email_address="skklove@gmail.com" link="http://zero.textyle.kr/">
         <name xml:lang="ko">고영수</name>
         <name xml:lang="zh-CN">Young-Soo Ko</name>
         <name xml:lang="jp">Young-Soo Ko</name>
+		<name xml:lang="vi">Young-Soo Ko</name>
     </author>
 
     <colorset>
@@ -37,6 +44,7 @@
             <title xml:lang="jp">白（デフォルト）</title>
             <title xml:lang="zh-CN">白色（基本）</title>
             <title xml:lang="en">White (default)</title>
+			<title xml:lang="vi">White (Mặc định)</title>
             <title xml:lang="es">Blanco (por defecto)</title>
             <title xml:lang="zh-TW">白色(預設)</title>
         </color>
@@ -45,34 +53,42 @@
     <extra_vars>
         <var name="intro_image" type="image">
             <title xml:lang="ko">대문 배경 이미지</title>
+			<title xml:lang="vi">Hình nền chính</title>
             <title xml:lang="zh-CN">头部背景</title>
             <title xml:lang="jp">トップページの背景イメージ</title>
             <description xml:lang="ko">TextyleHub 첫 페이지의 상단에 표시될 대문의 배경 이미지를 등록할 수 있습니다.</description>
+			<description xml:lang="vi">Đặt hình nền sẽ hiển thị tại trang đầu tiên của TextyleHub.</description>
             <description xml:lang="zh-CN">可上传显示在TextyleHub头部的背景图片。</description>
             <description xml:lang="jp">TextyleHubのトップページヘッダーに表示する（背景）イメージを登録します。</description>
         </var>
         <var name="intro_text" type="textarea">
             <title xml:lang="ko">대문 글</title>
+			<title xml:lang="vi">Bài viết chính</title>
             <title xml:lang="zh-CN">简单描述</title>
             <title xml:lang="jp">대문 글</title>
             <description xml:lang="ko">대문의 내용을 입력하실 수 있습니다 (HTML 태그를 그대로 쓸 수 있습니다)</description>
+			<description xml:lang="vi">Hãy nhập bài viết sẽ hiển thị đầu tiên khi truy cập vào trang chủ Blog. (Có thể sử dụng mã HTML)</description>
             <description xml:lang="zh-CN">可输入首页简单描述(可以使用HTML标签)。</description>
             <description xml:lang="jp">トップページの内容を入力します。 (HTMLタグ可能)</description>
         </var>
         <var name="content_type" type="select">
             <title xml:lang="ko">컨텐츠 구조</title>
+			<title xml:lang="vi">Cơ cấu nội dung</title>
             <title xml:lang="zh-CN">布局样式</title>
             <title xml:lang="jp">コンテンツレイアウト</title>
             <description xml:lang="ko">본문과 추가정보의 위치를 변경할 수 있습니다</description>
+			<description xml:lang="vi">Có thể thêm nội dung vào khu vực phần thân Blog. (Tùy chọn)</description>
             <description xml:lang="zh-CN">布置内容区与信息栏(侧栏)位置。</description>
             <description xml:lang="jp">本文と追加情報の配置を変更します。</description>
             <options value="ce">
                 <title xml:lang="ko">본문 + 서브메뉴 영역 (기본)</title>
+				<title xml:lang="vi">Phần thân + Menu con (Mặc định)</title>
                 <title xml:lang="zh-CN">右侧信息栏(默认)</title>
                 <title xml:lang="jp">本文 + サブメニュー領域 (基本)</title>
             </options>
             <options value="ec">
                 <title xml:lang="ko">서브 메뉴 영역 + 본문</title>
+				<title xml:lang="vi">Menu con + Phần thân</title>
                 <title xml:lang="zh-CN">左侧信息栏</title>
                 <title xml:lang="jp">サブメニュー + 本文</title>
             </options>
