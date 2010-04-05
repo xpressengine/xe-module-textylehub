@@ -48,18 +48,18 @@
     $lang->no_comments = '댓글이 없습니다';
     $lang->no_trackbacks = '트랙백이 없습니다';
 
-    $lang->textyle_list = '블로그 목록';
-    $lang->updated_textyle = '업데이트 된 블로그';
-    $lang->newest_posts = '최근 올라온 글';
-    $lang->newest_comment = '최근 댓글';
-    $lang->newest_trackback = '최근 트랙백';
-    $lang->posts = '게시글';
+    $lang->textyle_list = '部落格列表';
+    $lang->updated_textyle = '最新更新';
+    $lang->newest_posts = '最新主題';
+    $lang->newest_comment = '最新評論';
+    $lang->newest_trackback = '最新引用';
+    $lang->posts = '主題';
 
     $lang->msg_disable_to_create_textyle = '블로그를 개설할 수 없습니다';
 
     $lang->textyle_address = '블로그 주소';
-    $lang->blog_title = '블로그 제목';
-    $lang->blog_description = '한줄 소개';
+    $lang->blog_title = '部落格標題';
+    $lang->blog_description = '簡介';
     $lang->textyle_agreement = '이용 약관';
     $lang->cmd_agree = '동의합니다';
     $lang->about_textyle_agreement = '이용약관에 동의해야만 블로그를 만들 수 있습니다.';
