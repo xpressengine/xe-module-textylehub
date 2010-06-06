@@ -51,8 +51,11 @@
                 if(!$this->grant->create || $this->module_info->textyle_creation_count<=$own_textyle_count) return new Object(-1,'alert_disable_to_create');
             }
 
+            $settings = null;
+            $settings->title = $title;
+
             // textyle 생성
-            $output = $oTextyleAdminController->insertTextyle($domain, $logged_info->user_id);
+            $output = $oTextyleAdminController->insertTextyle($domain, $logged_info->user_id, $settings);
             if(!$output->toBool()) return $output;
 
             $module_srl = $output->get('module_srl');
