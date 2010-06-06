@@ -7,8 +7,8 @@
     </tables>
     <columns>
         <column name="sites.domain" alias="domain" />
-        <column name="textyle.textyle_title" alias="textyle_title"/>
-        <column name="textyle.textyle_content" alias="textyle_content"/>
+        <column name="textyle.textyle_title" alias="textyle_title" />
+        <column name="textyle.textyle_content" alias="textyle_content" />
         <column name="documents.*" />
     </columns>
     <conditions>

@@ -1,7 +1,7 @@
 <query id="getPopularTags" action="select">
     <tables>
-        <table name="modules" alias="modules"/>
-        <table name="tags" alias="tags"/>
+        <table name="modules" alias="modules" />
+        <table name="tags" alias="tags" />
     </tables>
     <columns>
         <column name="tags.tag" />
