@@ -8,7 +8,7 @@
     <tr>
         <th scope="row"><div>{$lang->mid}</div></th>
         <td>
-            <input type="text" name="textylehub_id" value="{htmlspecialchars($module_info->mid)}" class="inputTypeText w200" />
+            <input type="text" name="textylehub_id" value="{$module_info->mid}" class="inputTypeText w200" />
             <p>{$lang->about_mid}</p>
         </td>
     </tr>
@@ -18,7 +18,7 @@
             <select name="module_category_srl">
                 <option value="0">{$lang->notuse}</option>
                 <!--@foreach($module_category as $key => $val)-->
-                <option value="{htmlspecialchars($key)}" <!--@if($module_info->module_category_srl==$key)-->selected="selected"<!--@end-->>{htmlspecialchars($val->title)}</option>
+                <option value="{$key}" <!--@if($module_info->module_category_srl==$key)-->selected="selected"<!--@end-->>{$val->title}</option>
                 <!--@end-->
             </select>
             <p>{$lang->about_module_category}</p>
@@ -38,7 +38,7 @@
             <select name="layout_srl">
             <option value="0">{$lang->notuse}</option>
             <!--@foreach($layout_list as $key => $val)-->
-            <option value="{$val->layout_srl}" <!--@if($module_info->layout_srl==$val->layout_srl)-->selected="selected"<!--@end-->>{htmlspecialchars($val->title)} ({htmlspecialchars($val->layout)})</option>
+            <option value="{$val->layout_srl}" <!--@if($module_info->layout_srl==$val->layout_srl)-->selected="selected"<!--@end-->>{$val->title} ({$val->layout})</option>
             <!--@end-->
             </select>
             <p>{$lang->about_layout}</p>
@@ -49,7 +49,7 @@
         <td>
             <select name="skin">
                 <!--@foreach($skin_list as $key=>$val)-->
-                <option value="{htmlspecialchars($key)}" <!--@if($module_info->skin==$key ||(!$module_info->skin && $key=='default'))-->selected="selected"<!--@end-->>{htmlspecialchars($val->title)}</option>
+                <option value="{$key}" <!--@if($module_info->skin==$key ||(!$module_info->skin && $key=='default'))-->selected="selected"<!--@end-->>{$val->title}</option>
                 <!--@end-->
             </select>
             <p>{$lang->about_skin}</p>
@@ -61,7 +61,7 @@
             <label for="chkTextyleVid"><input type="radio" id="chkTextyleVid" name="access_type" value="vid" onclick="toggleTextyleAccessType('vid');" <!--@if($module_info->access_type=='vid')-->checked="checked"<!--@end--> /> {$lang->access_vid}</label>
             <label for="chkTextyleDomain"><input type="radio" id="chkTextyleDomain" name="access_type" value="domain" onclick="toggleTextyleAccessType('domain');" <!--@if($module_info->access_type!='vid')-->checked="checked"<!--@end--> /> {$lang->access_domain}</label>
             <div id="accessTextyleDomain" style="display:<!--@if($module_info->access_type=='vid')-->none<!--@end-->; margin-top:10px;">
-                URL : <input type="text" name="default_domain" value="{htmlspecialchars($module_info->default_domain)}" class="inputTypeText w200" />
+                URL : <input type="text" name="default_domain" value="{$module_info->default_domain}" class="inputTypeText w200" />
             </div>
             <p>{$lang->about_textyle_creation_type}</p>
         </td>
@@ -69,42 +69,42 @@
     <tr>
         <th scope="row"><div>{$lang->textyle_creation_count}</div></th>
         <td>
-            <input type="text" name="textyle_creation_count" value="{htmlspecialchars($module_info->textyle_creation_count)}"  class="inputTypeText" />
+            <input type="text" name="textyle_creation_count" value="{$module_info->textyle_creation_count}"  class="inputTypeText" />
             <p>{$lang->about_textyle_creation_count}</p>
         </td>
     </tr>
     <tr>
         <th scope="row"><div>{$lang->newest_documents_count}</div></th>
         <td>
-            <input type="text" name="newest_documents_count" value="{htmlspecialchars($module_info->newest_documents_count)}"  class="inputTypeText" />
+            <input type="text" name="newest_documents_count" value="{$module_info->newest_documents_count}"  class="inputTypeText" />
             <p>{$lang->about_newest_documents_count}</p>
         </td>
     </tr>
     <tr>
         <th scope="row"><div>{$lang->newest_textyles_count}</div></th>
         <td>
-            <input type="text" name="newest_textyles_count" value="{htmlspecialchars($module_info->newest_textyles_count)}"  class="inputTypeText" />
+            <input type="text" name="newest_textyles_count" value="{$module_info->newest_textyles_count}"  class="inputTypeText" />
             <p>{$lang->about_newest_textyles_count}</p>
         </td>
     </tr>
     <tr>
         <th scope="row"><div>{$lang->sub_newest_textyles_count}</div></th>
         <td>
-            <input type="text" name="sub_newest_textyles_count" value="{htmlspecialchars($module_info->sub_newest_textyles_count)}"  class="inputTypeText" />
+            <input type="text" name="sub_newest_textyles_count" value="{$module_info->sub_newest_textyles_count}"  class="inputTypeText" />
             <p>{$lang->about_sub_newest_textyles_count}</p>
         </td>
     </tr>
     <tr>
         <th scope="row"><div>{$lang->newest_comments_count}</div></th>
         <td>
-            <input type="text" name="newest_comments_count" value="{htmlspecialchars($module_info->newest_comments_count)}"  class="inputTypeText" />
+            <input type="text" name="newest_comments_count" value="{$module_info->newest_comments_count}"  class="inputTypeText" />
             <p>{$lang->about_newest_comments_count}</p>
         </td>
     </tr>
     <tr>
         <th scope="row"><div>{$lang->newest_trackbacks_count}</div></th>
         <td>
-            <input type="text" name="newest_trackbacks_count" value="{htmlspecialchars($module_info->newest_trackbacks_count)}"  class="inputTypeText" />
+            <input type="text" name="newest_trackbacks_count" value="{$module_info->newest_trackbacks_count}"  class="inputTypeText" />
             <p>{$lang->about_newest_trackbacks_count}</p>
         </td>
     </tr>
