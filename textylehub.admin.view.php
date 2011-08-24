@@ -14,6 +14,9 @@
             Context::set('module_srl', $this->module_info->module_srl);
 
             $this->setTemplatePath($this->module_path.'tpl');
+
+			$security = new Security();
+			$security->encodeHTML('module_info.');
         }
 
         function dispTextylehubAdminConfig() {
