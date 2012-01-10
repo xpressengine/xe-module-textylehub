@@ -1,6 +1,6 @@
 <filter name="update_textylehub" module="textylehub" act="procTextylehubAdminUpdate" confirm_msg_code="confirm_submit">
     <form>
-        <node target="mid" required="true" maxlength="40" filter="alpha_number" />
+        <node target="textylehub_id" required="true" maxlength="40" filter="alpha_number" />
         <node target="browser_title" required="true" maxlength="250" />
     </form>
     <parameter />
