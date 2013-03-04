@@ -1,20 +1,14 @@
-<!--#include("header.html")-->
-
-<!--%import("./filter/create.xml")-->
-
-<form action="./" method="post" onsubmit="return procFilter(this, create_textylehub);">
-<table class="rowTable">
-<tr>
-    <th colspan="2">
-        {nl2br($lang->about_create_textylehub)}
-    </th>
-</tr>
-<tr>
-    <td>
-        {$lang->mid}
-        <input type="text" name="textylehub_id" class="inputTypeText"/>
-        <span class="button black"><input type="submit" value="{$lang->cmd_create_textylehub}" /></span>
-    </td>
-</tr>
-</table>
+<include target="header.html" />
+<load target="./filter/create.xml" />
+<p>{nl2br($lang->about_create_textylehub)}</p>
+<form action="./" method="post" onsubmit="return procFilter(this, create_textylehub);" class="x_form-horizontal">
+	<div class="x_control-group">
+		<label for="textylehub_id" class="x_control-label">{$lang->mid}</label>
+		<div class="x_controls">
+			<span class="x_input-append">
+				<input type="text" name="textylehub_id" id="textylehub_id" />
+				<input type="submit" value="{$lang->cmd_create_textylehub}" class="x_btn x_btn-inverse" />
+			</span>
+		</div>
+	</div>
 </form>

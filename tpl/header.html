@@ -1,13 +1,13 @@
-<h3 class="xeAdmin">{$lang->textylehub} <span class="gray">{$lang->cmd_management}</span></h3>
-<p class="infoText">{nl2br($lang->about_textylehub)}</p>
-
-<!--@if($module_info)-->
-<div class="header4">
-    <ul class="localNavigation">
-        <li <!--@if($act=='dispTextylehubAdminConfig')-->class="on"<!--@end-->><a href="{getUrl('act','dispTextylehubAdminConfig')}">{$lang->textylehub_config}</a></li>
-        <li <!--@if($act=='dispTextylehubAdminGrantInfo')-->class="on"<!--@end-->><a href="{getUrl('act','dispTextylehubAdminGrantInfo')}">{$lang->cmd_manage_grant}</a></li>
-        <li <!--@if($act=='dispTextylehubAdminSkinInfo')-->class="on"<!--@end-->><a href="{getUrl('act','dispTextylehubAdminSkinInfo')}">{$lang->cmd_manage_skin}</a></li>
-        <li><a href="{getUrl('','mid',$module_info->mid)}">{$lang->cmd_move}</a></li>
-    </ul>
+<div class="x_page-header">
+	<h1>
+		{$lang->textylehub} {$lang->cmd_management}
+		<a href="#aboutModule" data-toggle class="x_icon-question-sign">{$lang->help}</a>
+	</h1>
 </div>
-<!--@end-->
+<p class="x_alert x_alert-info" id="aboutModule" hidden>{nl2br($lang->about_textylehub)}</p>
+<ul class="x_nav x_nav-tabs" cond="$module_info">
+	<li class="x_active"|cond="$act=='dispTextylehubAdminConfig'"><a href="{getUrl('act','dispTextylehubAdminConfig')}">{$lang->textylehub_config}</a></li>
+	<li class="x_active"|cond="$act=='dispTextylehubAdminGrantInfo'"><a href="{getUrl('act','dispTextylehubAdminGrantInfo')}">{$lang->cmd_manage_grant}</a></li>
+	<li class="x_active"|cond="$act=='dispTextylehubAdminSkinInfo'"><a href="{getUrl('act','dispTextylehubAdminSkinInfo')}">{$lang->cmd_manage_skin}</a></li>
+	<li><a href="{getUrl('','mid',$module_info->mid)}">{$lang->cmd_move}</a></li>
+</ul>
