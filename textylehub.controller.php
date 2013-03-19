@@ -16,6 +16,7 @@
         function procTextylehubCreate() {
             $oModuleModel = &getModel('module');
             $oTextyleAdminController = &getAdminController('textyle');
+            $oMemberModel = &getModel('member');
 
             $logged_info = Context::get('logged_info');
             if(!$logged_info) return new Object(-1,'msg_invalid_request');
@@ -50,12 +51,22 @@
                 $own_textyle_count = count($output->data);
                 if(!$this->grant->create || $this->module_info->textyle_creation_count<=$own_textyle_count) return new Object(-1,'alert_disable_to_create');
             }
-
+		
             $settings = null;
             $settings->title = $title;
-
+            
+       		$memberConfig = $oMemberModel->getMemberConfig();
+            foreach($memberConfig->signupForm as $item){
+            	if($item->isIdentifier) $identifierName = $item->name;
+            }
+            if($identifierName == "user_id") {
+            	$identifierValue = $logged_info->user_id;
+            	}
+            else {
+            	$identifierValue = $logged_info->email_address;
+            }
             // textyle 생성
-            $output = $oTextyleAdminController->insertTextyle($domain, $logged_info->user_id, $settings);
+            $output = $oTextyleAdminController->insertTextyle($domain, $identifierValue, $settings);
             if(!$output->toBool()) return $output;
 
             $module_srl = $output->get('module_srl');

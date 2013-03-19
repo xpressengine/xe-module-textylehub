@@ -33,7 +33,7 @@
             $args->page = $page;
             $args->page_count = 10;
             $args->list_count = $this->module_info->newest_documents_count;
-			$args->is_secret = 'N';	//2011.03.04 비밀글 안뽑아오기 - cherryfilter
+			$args->status = 'PUBLIC';	//2011.03.04 비밀글 안뽑아오기 - cherryfilter
 
             $search_target = trim(Context::get('search_target'));
             $search_keyword = trim(Context::get('search_keyword'));

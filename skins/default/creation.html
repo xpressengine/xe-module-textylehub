@@ -6,7 +6,7 @@
 		</div>
 		<!-- /.contentHeader -->
 		<!-- .blogCreation -->
-		<form action="./" method="post" onsubmit="if(!jQuery('#userAgreement').get(0).checked) {alert('{$lang->about_textyle_agreement}');return false;} return procFilter(this,creation);" class="blogCreation">
+		<form action="./" method="post" onsubmit="if(!jQuery('#userAgreement').get(0).checked) {alert('You have to agree to agreement prior to creating new blog.');return false;} return procFilter(this,creation);" class="blogCreation">
             <input type="hidden" name="mid" value="{$module_info->mid}" />
 			<fieldset>
 				<table border="1" cellspacing="0">
@@ -38,7 +38,7 @@
 				</table>
 			</fieldset>
 			<span class="tcb tcbLarge strong"><input type="submit" value="{$lang->cmd_create_textyle}" /></span>
-			<span class="tcb tcbLarge"><button type="reset" onclick="location.href='{getUrl('act','')}';return false;">{$lang->cmd_cancel}</button></span>
+			<span class="tcb tcbLarge"><a href="{getUrl('act','')}">{$lang->cmd_cancel}</a></span>
 		</form>
 		<!-- .blogCreation -->
 		
