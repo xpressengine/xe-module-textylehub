@@ -33,8 +33,8 @@
     <description xml:lang="tr">
         Textyle Hub, her textyle bloğundan gelen karma günlük bilgileri gürüntüleyen bir merkez(hub) sayfa oluşturmak için kullanılır. 
     </description>
-    <version>1.2.2</version>
-    <date>2013-03-15</date>
+    <version>1.7.0</version>
+    <date>2013-03-18</date>
     <category>service</category>
     <author email_address="" link="http://xe-textyle.googlecode.com">
         <name xml:lang="ko">NHN</name>
